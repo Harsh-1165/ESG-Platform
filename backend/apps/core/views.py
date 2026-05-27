@@ -15,7 +15,7 @@ class OrganizationViewSet(viewsets.ModelViewSet):
     queryset = Organization.objects.filter(active=True)
     serializer_class = OrganizationSerializer
     permission_classes = [permissions.IsAuthenticated, IsOrgMember]
-    
+
     def get_queryset(self):
         """Return organizations user is member of"""
         return Organization.objects.filter(
